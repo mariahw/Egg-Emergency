@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="scripts/libs/phaser/phaser.min.js"></script>
+</head>
+<body>
+    
+    <div id="game-container"></div>   
+    
+    <script src="scripts/states/Boot.js"></script>
+    <script src="scripts/states/Preload.js"></script>
+    <script src="scripts/states/Menu.js"></script>
+    <script src="scripts/states/StartGame.js"></script>
+    <script src="scripts/states/GameOver.js"></script>
+    
+    <script>
+    
+			(function() {
+				var game = new Phaser.Game(300, 500, Phaser.AUTO, 'gameContainer');
+                    game.state.add("Boot", boot);
+                    game.state.add("Preload", preload);
+                    game.state.add("Menu", mainMenu);
+                    game.state.add("StartGame", startGame);
+                    game.state.add("GameOver", gameOver);
+                    game.state.start("Boot");
+			})();  
+        
+    </script>
+
+    
+</body>
+</html>
